@@ -1,11 +1,15 @@
-import Greetings from "./common/Greetings";
-
+import Navbar from "./common/Navbar";
+import FirstSection from "./components/FirstSection";
 function App() {
   return (
     <>
-      <div>
-        <h1>Hello, React!</h1>
-        <Greetings />
+      {/* This is the navbar */}
+      <div className=" p-10 max-w-screen-2xl mx-auto min-h-screen">
+        {/* Navigation Bar */}
+        <Navbar />
+
+        {/* Main Content */}
+        <FirstSection />
       </div>
     </>
   );
