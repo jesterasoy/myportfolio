@@ -6,6 +6,7 @@ import Footer from "./common/Footer";
 
 //PAGES
 import Home from "./pages/Home";
+import ProjectData from "./pages/ProjectData"; // adjust path as needed
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/ProjectData/:title" element={<ProjectData />} />
         </Routes>
 
         <Footer />

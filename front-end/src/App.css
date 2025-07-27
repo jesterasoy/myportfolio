@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Monsieur+La+Doulaise&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 @import "tailwindcss";
 
@@ -18,4 +19,27 @@
 }
 .sora {
   font-family: "Sora", sans-serif;
+}
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+}
+.scrollbar-on-hover {
+  overflow-y: hidden;
+}
+
+.scrollbar-on-hover:hover {
+  overflow-y: auto;
+}
+
+.scrollbar-on-hover::-webkit-scrollbar {
+  width: 4px;
+}
+
+.scrollbar-on-hover::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-on-hover::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
 }

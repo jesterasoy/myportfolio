@@ -5,19 +5,22 @@ import {
   IoLogoFacebook,
   IoLogoGithub,
 } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <>
       <div className="p-10 max-w-screen-2xl mx-auto">
         <header className="flex justify-between items-center ">
-          <h1 className="sora font-bold  text-4xl text-gray-900 hover:tracking-wide transition-all duration-300 select-none">
-            J
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 to-yellow-600 via-yellow-700">
-              N
-            </span>
-            A<span className="text-yellow-600">.</span>
-          </h1>
+          <Link to="/">
+            <h1 className="sora font-bold  text-4xl text-gray-900 hover:tracking-wide transition-all duration-300 select-none">
+              J
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 to-yellow-600 via-yellow-700">
+                N
+              </span>
+              A<span className="text-yellow-600">.</span>
+            </h1>
+          </Link>
 
           <nav className="flex space-x-3 text-2xl">
             <a

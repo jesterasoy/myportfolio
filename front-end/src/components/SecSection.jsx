@@ -1,19 +1,21 @@
+import { Link } from "react-router-dom";
+
 function SecSection() {
   const myProjects = [
     {
       id: 1,
-      Title: "Personal Portfolio Website",
+      Title: "Plated.",
       Description:
-        "A responsive portfolio site built with HTML, CSS, and JavaScript to showcase my skills and projects.",
-      Technologies: ["HTML", "CSS", "JavaScript"],
+        "A recipe website that allows users to search for recipes, view details, and save their favorites. ",
+      Technologies: ["HTML", "CSS", "JavaScript", "PHP", "TailwindCSS"],
       Link: "https://example.com/portfolio",
     },
     {
       id: 2,
-      Title: "Task Manager App",
+      Title: "Bagiong Barrio Senior High School Library System",
       Description:
-        "A simple task manager that allows users to add, delete, and mark tasks as completed.",
-      Technologies: ["React", "Tailwind CSS", "Firebase"],
+        "Built for a local school, this library system allows students to search for books, view details, and manage their borrowing.",
+      Technologies: ["React", "Tailwind CSS", "MYSQL", "Node.js"],
       Link: "https://example.com/task-manager",
     },
     {
@@ -23,22 +25,6 @@ function SecSection() {
         "A movie search app using an external API to browse movies and view details.",
       Technologies: ["HTML", "CSS", "JavaScript", "TMDB API"],
       Link: "https://example.com/movie-finder",
-    },
-    {
-      id: 4,
-      Title: "E-Commerce Website",
-      Description:
-        "A dummy e-commerce front-end with shopping cart functionality.",
-      Technologies: ["React", "Redux", "Bootstrap"],
-      Link: "https://example.com/ecommerce",
-    },
-    {
-      id: 5,
-      Title: "Blog CMS",
-      Description:
-        "A basic blog platform with admin dashboard for managing posts.",
-      Technologies: ["PHP", "MySQL", "Bootstrap"],
-      Link: "https://example.com/blog-cms",
     },
   ];
 
@@ -64,9 +50,18 @@ function SecSection() {
                 ></div>
 
                 <div className="w-1/2 h-full bg-white p-6 flex flex-col justify-center">
-                  <h2 className="text-2xl font-bold mb-2">
-                    {myProjects[0].Title}
-                  </h2>
+                  <Link
+                    to={`/ProjectData/${myProjects[0].Title.replace(/\s+/g, "-")
+                      .replace(/\./g, "")
+                      .toLowerCase()}`}
+                    state={{ project: myProjects[0] }}
+                    className="text-decoration-none"
+                  >
+                    <h2 className="text-2xl font-bold mb-2">
+                      {myProjects[0].Title}
+                    </h2>
+                  </Link>
+
                   <p className="text-gray-700">{myProjects[0].Description}</p>
                 </div>
               </div>
@@ -76,9 +71,16 @@ function SecSection() {
             <div key={myProjects[1].id} className="mb-10">
               <div className="relative h-[350px] w-full flex rounded-lg overflow-hidden shadow-md">
                 <div className="w-1/2 h-full bg-white p-6 flex flex-col justify-center">
-                  <h2 className="text-2xl font-bold mb-2">
-                    {myProjects[1].Title}
-                  </h2>
+                  <Link
+                    to={`/ProjectData/${myProjects[1].Title.replace(/\s+/g, "-")
+                      .replace(/\./g, "")
+                      .toLowerCase()}`}
+                    state={{ project: myProjects[1] }}
+                  >
+                    <h2 className="text-2xl font-bold mb-2">
+                      {myProjects[1].Title}
+                    </h2>
+                  </Link>
                   <p className="text-gray-700">{myProjects[1].Description}</p>
                 </div>
 

@@ -5,8 +5,7 @@ import Typwriter from "typewriter-effect";
 import "../styles/Button.css";
 //ICONS
 import { FaArrowDownLong } from "react-icons/fa6";
-import { HiOutlineXMark } from "react-icons/hi2";
-
+import AboutMe from "./AboutMe";
 const FirstSection = () => {
   const [isSideToggleOpen, setSideToggleOpen] = useState(false);
 
@@ -66,18 +65,7 @@ const FirstSection = () => {
             </div>
           </div>
 
-          <div className="poppins-thin flex justify-start items-center gap-4 -mt-5 2xl:mt-10">
-            <button
-              className="get p-4 tracking-wide font-semibold rounded-full cursor-pointer"
-              onClick={toggleBar}
-            >
-              <span> Get to Know Me</span>
-            </button>
-
-            <button className="bg p-4 tracking-wide font-semibold rounded-full cursor-pointer">
-              <span>Resume</span>
-            </button>
-          </div>
+          <AboutMe />
 
           <div className="relative sora tracking-wide mb-[5rem] lg:mb-[8rem] 2xl:mb-[15rem]">
             <div className="absolute -bottom-[120px] 2xl:-bottom-[200px] left-1/2 -translate-x-1/2 flex flex-col items-center">
@@ -90,34 +78,6 @@ const FirstSection = () => {
             </div>
           </div>
         </section>
-      </div>
-
-      <div
-        className={`fixed top-0 right-0 h-full w-full md:w-[500px] bg-white shadow-lg transform transition-transform duration-300 ease-in-out z-50 ${
-          isSideToggleOpen ? "translate-x-0" : "translate-x-full"
-        }`}
-      >
-        <div className="p-6 sora">
-          <div className="flex justify-end items-center">
-            <button
-              className="mb-4 text-[#333333] cursor-pointer font-bold px-2 py-2 bg-[#F5F5F5] rounded-full"
-              onClick={toggleBar}
-            >
-              <HiOutlineXMark />
-            </button>
-          </div>
-          <h2 className="text-xl font-bold mb-4">About Me</h2>
-          <div>
-            <img
-              src="images/myFirstPic.jpg"
-              className="object-cover mb-4 rounded-full h-[100px] w-[100px]"
-            />
-          </div>
-          <p>
-            Hello! I'm Jester Nicholas Asoy. I'm a web developer with a passion
-            for learning and building beautiful things on the web!
-          </p>
-        </div>
       </div>
     </>
   );
