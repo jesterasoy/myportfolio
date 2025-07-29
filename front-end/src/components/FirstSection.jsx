@@ -7,10 +7,14 @@ import "../styles/Button.css";
 import { FaArrowDownLong } from "react-icons/fa6";
 import AboutMe from "./AboutMe";
 const FirstSection = () => {
-  const [isSideToggleOpen, setSideToggleOpen] = useState(false);
+  const [isClickScrollDown, setIsClickScrollDown] = useState(false);
 
-  const toggleBar = () => {
-    setSideToggleOpen(!isSideToggleOpen);
+  const handleScrollDown = () => {
+    setIsClickScrollDown(true);
+    window.scrollTo({
+      top: window.innerHeight,
+      behavior: "smooth",
+    });
   };
 
   return (
@@ -29,11 +33,11 @@ const FirstSection = () => {
 
               <div className="absolute top-[245px] 2xl:top-[290px] left-[370px] 2xl:left-[750px] -z-10 h-[65px] w-[200px] 2xl:w-[300px] bg-[#F4CE14] opacity-30 blur-md"></div>
               <h1 className="font-bold text-6xl 2xl:text-8xl tracking-wide flex items-center gap-5">
-                A Web{" "}
+                A
                 <span>
                   <Typwriter
                     options={{
-                      strings: [" Developer."],
+                      strings: ["Web Developer.", "IT Specialist."],
                       autoStart: true,
                       loop: true,
                     }}
@@ -69,12 +73,14 @@ const FirstSection = () => {
 
           <div className="relative sora tracking-wide mb-[5rem] lg:mb-[8rem] 2xl:mb-[15rem]">
             <div className="absolute -bottom-[120px] 2xl:-bottom-[200px] left-1/2 -translate-x-1/2 flex flex-col items-center">
-              <div className="animate-bounce bg-white p-3 rounded-full shadow-lg ring-1 ring-gray-200 hover:ring-gray-400 transition-all duration-300">
-                <FaArrowDownLong className="text-[1rem] text-gray-800" />
+              <div className="" onClick={handleScrollDown}>
+                <div className="text-center w-fit mx-auto cursor-pointer animate-bounce bg-white p-3 rounded-full shadow-lg ring-1 ring-gray-200 hover:ring-gray-400 transition-all duration-300">
+                  <FaArrowDownLong className="text-[1rem] text-gray-800" />
+                </div>
+                <span className="cursor-pointer mt-3 font-semibold text-gray-700 text-sm sm:text-md transition-opacity duration-300 hover:opacity-80">
+                  Scroll for more
+                </span>
               </div>
-              <span className="mt-3 font-semibold text-gray-700 text-sm sm:text-md transition-opacity duration-300 hover:opacity-80">
-                Scroll for more
-              </span>
             </div>
           </div>
         </section>

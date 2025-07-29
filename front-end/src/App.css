@@ -32,7 +32,7 @@
 }
 
 .scrollbar-on-hover::-webkit-scrollbar {
-  width: 4px;
+  width: 0px;
 }
 
 .scrollbar-on-hover::-webkit-scrollbar-track {
