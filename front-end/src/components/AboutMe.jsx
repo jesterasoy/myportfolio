@@ -1,5 +1,7 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
+//ICONS
 import { HiOutlineXMark } from "react-icons/hi2";
+//PACKAGES
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -13,6 +15,26 @@ const AboutMe = () => {
   const toggleBar = () => {
     setSideToggleOpen(!isSideToggleOpen);
   };
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const openModal = (tech) => {
+    setSelectedImage(tech);
+  };
+
+  const closeModal = () => {
+    setSelectedImage(null);
+  };
+  useEffect(() => {
+    if (selectedImage) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [selectedImage]);
 
   //Technology stack for the Swiper component
   const techStack = [
@@ -72,15 +94,7 @@ const AboutMe = () => {
       img: "images/techEvents/pic5.jpg",
     },
   ];
-  const [selectedImage, setSelectedImage] = useState(null);
 
-  const openModal = (tech) => {
-    setSelectedImage(tech);
-  };
-
-  const closeModal = () => {
-    setSelectedImage(null);
-  };
   return (
     <>
       <div className="poppins-thin flex justify-start items-center gap-4 -mt-5 2xl:mt-10">
@@ -226,34 +240,40 @@ const AboutMe = () => {
                 </SwiperSlide>
               ))}
             </Swiper>
-
-            {/* Modal */}
-            {selectedImage && (
-              <div className="fixed inset-0 backdrop-blur-sm  z-60 flex items-center justify-center min-h-screen">
-                <div className="bg-white rounded-xl max-w-lg w-full p-4 shadow-lg relative mx-4">
-                  <button
-                    onClick={closeModal}
-                    className="absolute top-3 right-3 text-[#333333] px-1 py-1 text-sm bg-[#F5F5F5] rounded-full hover:text-red-500 transition-all hover:rotate-90 duration-300 cursor-pointer"
-                  >
-                    <HiOutlineXMark className="w-6 h-6" />
-                  </button>
-                  <img
-                    src={selectedImage.img}
-                    alt="Expanded"
-                    className="w-full h-auto rounded-lg mb-4"
-                  />
-                  <h2 className="text-xl font-bold mb-2">
-                    {selectedImage.title || "Tech Event"}
-                  </h2>
-                  <p className="text-gray-600 text-sm">
-                    {selectedImage.description || "No description available."}
-                  </p>
-                </div>
-              </div>
-            )}
           </div>
         </div>
       </div>
+
+      {/* Modal */}
+      {selectedImage && (
+        <div className="fixed inset-0 backdrop-blur-sm  z-60 flex items-center justify-center min-h-screen">
+          <div>
+            <div className="bg-white rounded-xl max-w-lg w-full p-4 shadow-lg relative mx-4">
+              <button
+                onClick={closeModal}
+                className="absolute top-3 right-3 text-[#333333] px-1 py-1 text-sm bg-[#F5F5F5] rounded-full hover:text-red-500 transition-all hover:rotate-90 duration-300 cursor-pointer"
+              >
+                <HiOutlineXMark className="w-6 h-6" />
+              </button>
+              <img
+                src={selectedImage.img}
+                alt="Expanded"
+                className="w-full h-auto rounded-lg mb-4"
+              />
+              <h2 className="text-xl font-bold mb-2">
+                {selectedImage.title || "Tech Event"}
+              </h2>
+              <p className="text-gray-600 text-sm">
+                {selectedImage.description || "No description available."}
+              </p>
+            </div>
+            <div className="flex justify-between mt-4">
+              <button className="">Prev</button>
+              <button>Next</button>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 };
