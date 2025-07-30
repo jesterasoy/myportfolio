@@ -39,7 +39,7 @@ function SecSection() {
                           .replace(/\./g, "")
                           .toLowerCase()}`}
                         state={{ project }}
-                        className="text-decoration-none"
+                        className="text-decoration-none hover:underline hover:text-yellow-600 transition-all duration-300"
                       >
                         <h2 className="text-2xl font-bold mb-2  ">
                           {project.Title}
@@ -57,7 +57,7 @@ function SecSection() {
                           .replace(/\./g, "")
                           .toLowerCase()}`}
                         state={{ project }}
-                        className="text-decoration-none"
+                        className="text-decoration-none hover:underline hover:text-yellow-600 transition-all duration-300"
                       >
                         <h2 className="text-2xl font-bold mb-2 truncate">
                           {project.Title}

@@ -47,7 +47,7 @@ const Navbar = () => {
             </a>
             <a
               target="_blank"
-              href="https://www.linkedin.com/in/asoy-jester-nicholas-026a13318/"
+              href="www.linkedin.com/in/jester-nicholas-asoy-026a13318"
               className="transition-transform  hover:scale-110 duration-200"
             >
               <IoLogoLinkedin />

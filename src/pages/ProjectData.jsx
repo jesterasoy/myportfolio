@@ -64,7 +64,7 @@ const ProjectData = () => {
         <div className="p-10 max-w-screen-2xl mx-auto min-h-screen">
           <div className="border-b border-gray-300 pb-6 mb-6">
             <div className="flex justify-between items-center border-b border-gray-300 pb-4 mb-4">
-              <h1 className="text-2xl md:text-5xl lg:text-6xl font-extrabold bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 text-transparent bg-clip-text mb-2">
+              <h1 className="text-2xl md:text-5xl lg:text-6xl font-extrabold bg-gradient-to-r from-yellow-500 via-yellow-600 to-yellow-700 text-transparent bg-clip-text mb-2">
                 {project.Title}
               </h1>
               <span className="inline-block px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-600 shadow-sm">
