@@ -5,6 +5,7 @@ import {
   IoLogoFacebook,
   IoLogoGithub,
 } from "react-icons/io";
+import { SiMinutemailer } from "react-icons/si";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -50,6 +51,13 @@ const Navbar = () => {
               className="transition-transform  hover:scale-110 duration-200"
             >
               <IoLogoLinkedin />
+            </a>
+            <a
+              target="_blank"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=asoy.jestern@gmail.com&su=Subject%20Here&body=Hello%20there!"
+              className="transition-transform  hover:scale-110 duration-200"
+            >
+              <SiMinutemailer />
             </a>
           </nav>
         </header>

@@ -20,12 +20,11 @@ function SecSection() {
                   <>
                     {/* Gradient Left (even index) */}
                     <div
-                      className={`w-full lg:w-1/2 h-[200px] lg:h-[300px] bg-gradient-to-r ${
-                        index === 0
-                          ? "from-red-500 via-red-600 to-red-700"
-                          : "from-blue-500 via-blue-600 to-blue-700"
-                      }`}
+                      className="w-full lg:w-1/2 h-[200px] lg:h-[400px]"
                       style={{
+                        backgroundImage: `url('images/${project.Cover}')`,
+                        backgroundSize: "cover",
+                        backgroundRepeat: "no-repeat",
                         clipPath:
                           window.innerWidth >= 1024
                             ? "polygon(0 0, 90% 0, 100% 100%, 0% 100%)"
@@ -69,8 +68,11 @@ function SecSection() {
 
                     {/* Gradient Right (odd index) */}
                     <div
-                      className="w-full lg:w-1/2 h-[200px] lg:h-auto bg-gradient-to-r from-yellow-500 via-yellow-600 to-yellow-700"
+                      className="w-full lg:w-1/2 h-[200px] lg:h-[400px]"
                       style={{
+                        backgroundImage: `url('images/${project.Cover}')`,
+                        backgroundSize: "cover",
+                        backgroundRepeat: "no-repeat",
                         clipPath:
                           window.innerWidth >= 1024
                             ? "polygon(10% 0, 100% 0, 100% 100%, 0% 100%)"
