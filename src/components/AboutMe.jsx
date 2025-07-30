@@ -1,4 +1,4 @@
-import { React, useState, useEffect } from "react";
+import { React, useState, useEffect, useRef } from "react";
 //ICONS
 import { HiOutlineXMark } from "react-icons/hi2";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
@@ -12,10 +12,44 @@ import { Autoplay } from "swiper/modules";
 const AboutMe = () => {
   // State to manage the toggle for the side bar
   const [isSideToggleOpen, setSideToggleOpen] = useState(false);
-
+  const sidebarRef = useRef(null);
   const toggleBar = () => {
     setSideToggleOpen(!isSideToggleOpen);
   };
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape" && event.target === document.body) {
+        setSideToggleOpen(false);
+      }
+    };
+
+    if (isSideToggleOpen) {
+      window.addEventListener("keydown", handleKeyDown);
+    }
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isSideToggleOpen]);
+
+  const handleClickOutside = (event) => {
+    if (
+      isSideToggleOpen &&
+      sidebarRef.current &&
+      !sidebarRef.current.contains(event.target)
+    ) {
+      setSideToggleOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isSideToggleOpen]);
+
   const [selectedImage, setSelectedImage] = useState(null);
 
   const openModal = (tech) => {
@@ -161,6 +195,7 @@ const AboutMe = () => {
           <div className="flex justify-between mb-6 items-center border-b border-gray-300 pb-4">
             <h2 className="text-2xl font-bold tracking-wide">About Me</h2>
             <button
+              ref={sidebarRef}
               className="text-[#333] hover:text-red-500 transition-all hover:rotate-90 duration-300 cursor-pointer"
               onClick={toggleBar}
             >
