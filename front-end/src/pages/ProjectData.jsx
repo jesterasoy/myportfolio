@@ -49,7 +49,7 @@ const ProjectData = () => {
         <div className="p-10 max-w-screen-2xl mx-auto min-h-screen">
           <div className="border-b-1 border-gray-300 pb-4 mb-8 p-0 ">
             <div className="border-b border-gray-300 pb-6 mb-6 flex justify-between">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 text-transparent bg-clip-text mb-2">
+              <h1 className="text-2xl md:text-5xl lg:text-6xl font-extrabold bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 text-transparent bg-clip-text mb-2">
                 {project.Title}
               </h1>
               <span className="inline-block px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-600 shadow-sm  h-fit w-fit">
@@ -62,19 +62,19 @@ const ProjectData = () => {
             </div>
           </div>
           <div className="mt-8">
-            <h1 className="text-3xl  font-bold tracking-wide">
+            <h1 className=" text-2xl xl:text-3xl   font-bold tracking-wide">
               Development Tools
             </h1>
-            <div className="grid grid-cols-5 gap-4 mt-8">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 xl:grid-cols-5 gap-4 gap-y-6 mt-8">
               {project.Technologies.map((tech, index) => (
                 <div
                   key={index}
-                  className="flex flex-col justify-center items-center text-center p-2 rounded-lg bg-gray-100 hover:bg-gray-200 transition h-56 w-56 mx-auto mb-5"
+                  className="flex flex-col justify-center items-center text-center p-4 rounded-lg bg-gray-100 hover:bg-gray-200 transition aspect-square  w-full mx-auto"
                 >
-                  <i className="text-8xl mb-2 text-blue-600">
+                  <i className="text-6xl sm:text-7xl lg:text-8xl mb-2 text-blue-600">
                     {techIcons[tech] || <span>🔧</span>}
                   </i>
-                  <span className="text-md font-bold text-gray-700 mt-2">
+                  <span className="text-sm sm:text-base font-semibold text-gray-700 mt-2">
                     {tech}
                   </span>
                 </div>

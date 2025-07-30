@@ -13,7 +13,7 @@ const Navbar = () => {
       <div className="p-10 max-w-screen-2xl mx-auto">
         <header className="flex justify-between items-center ">
           <Link to="/">
-            <h1 className="sora font-bold  text-4xl text-gray-900 hover:tracking-wide transition-all duration-300 select-none">
+            <h1 className="sora font-bold text-2xl  md:text-4xl text-gray-900 hover:tracking-wide transition-all duration-300 select-none">
               J
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 to-yellow-600 via-yellow-700">
                 N
@@ -22,7 +22,7 @@ const Navbar = () => {
             </h1>
           </Link>
 
-          <nav className="flex space-x-3 text-2xl">
+          <nav className="flex space-x-3 text-xl md:text-2xl">
             <a
               href="https://github.com/jesterasoy"
               target="_blank"

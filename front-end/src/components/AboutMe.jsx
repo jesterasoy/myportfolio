@@ -1,6 +1,7 @@
 import { React, useState, useEffect } from "react";
 //ICONS
 import { HiOutlineXMark } from "react-icons/hi2";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 //PACKAGES
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -35,6 +36,26 @@ const AboutMe = () => {
       document.body.style.overflow = "";
     };
   }, [selectedImage]);
+
+  const [nextImage, setNextImage] = useState(null);
+  const [prevImage, setPrevImage] = useState(null);
+
+  const handleNext = () => {
+    const currentIndex = techEvent.findIndex(
+      (img) => img.id === selectedImage.id
+    );
+    const nextIndex = (currentIndex + 1) % techEvent.length;
+    setNextImage(techEvent[nextIndex]);
+    setSelectedImage(techEvent[nextIndex]);
+  };
+  const handlePrev = () => {
+    const currentIndex = techEvent.findIndex(
+      (img) => img.id === selectedImage.id
+    );
+    const prevIndex = (currentIndex - 1 + techEvent.length) % techEvent.length;
+    setPrevImage(techEvent[prevIndex]);
+    setSelectedImage(techEvent[prevIndex]);
+  };
 
   //Technology stack for the Swiper component
   const techStack = [
@@ -97,15 +118,15 @@ const AboutMe = () => {
 
   return (
     <>
-      <div className="poppins-thin flex justify-start items-center gap-4 -mt-5 2xl:mt-10">
+      <div className="sora flex flex-wrap  md:justify-start items-center gap-4 mt-6 sm:mt-8 md:mt-10 lg:-mt-4 xl:-mt-6 2xl:mt-10">
         <button
-          className="get p-4 tracking-wide font-semibold rounded-full cursor-pointer"
+          className="get px-4 py-2 text-sm sm:text-base tracking-wide font-semibold rounded-full cursor-pointer sm:px-6 sm:py-3 lg:px-8 lg:py-4"
           onClick={toggleBar}
         >
-          <span> Get to Know Me</span>
+          <span>Get to Know Me</span>
         </button>
 
-        <button className="bg p-4 tracking-wide font-semibold rounded-full cursor-pointer">
+        <button className="bg px-4 py-2 text-sm sm:text-base tracking-wide font-semibold rounded-full cursor-pointer sm:px-6 sm:py-3 lg:px-8 lg:py-4">
           <span>Resume</span>
         </button>
       </div>
@@ -132,16 +153,16 @@ const AboutMe = () => {
             <img
               src="images/myFirstPic.jpg"
               alt="Jester Nicholas C. Asoy"
-              className="rounded-full h-[130px] w-[130px] object-cover shadow-md border border-gray-200"
+              className="rounded-full h-[150px] w-[150px] object-cover shadow-md border border-gray-200"
             />
-            <div className="text-center sm:text-left">
+            <div className="text-center md:text-left">
               <h3 className="text-xl font-semibold text-gray-900">
                 Jester Nicholas C. Asoy
               </h3>
               <div className="flex flex-wrap justify-center sm:justify-start gap-2 mt-1 mb-3 text-sm text-gray-600">
                 <span>Front-End Web Developer</span>•<span>Commission</span>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-gray-600">
+              <div className="flex flex-wrap justify-center md:justify-start gap-2 text-xs text-gray-600">
                 <span className="bg-white px-3 py-2 rounded-full shadow-sm border border-gray-100 w-fit h-fit">
                   📍 Malabon City, Philippines
                 </span>
@@ -191,7 +212,13 @@ const AboutMe = () => {
             <Swiper
               modules={[Autoplay]}
               spaceBetween={20}
-              slidesPerView={4}
+              slidesPerView={2}
+              breakpoints={{
+                640: { slidesPerView: 2 },
+                768: { slidesPerView: 3 },
+                1024: { slidesPerView: 4 },
+                1280: { slidesPerView: 4 },
+              }}
               autoplay={{ delay: 1500 }}
               loop={true}
             >
@@ -233,7 +260,7 @@ const AboutMe = () => {
                   <div className="rounded-xl overflow-hidden shadow-sm hover:shadow-md transform hover:scale-105 transition-all duration-300">
                     <img
                       src={tech.img}
-                      className="w-full h-36 object-cover"
+                      className="w-full h-24 lg:h-36 object-cover"
                       alt="Tech event"
                     />
                   </div>
@@ -248,7 +275,7 @@ const AboutMe = () => {
       {selectedImage && (
         <div className="fixed inset-0 backdrop-blur-sm  z-60 flex items-center justify-center min-h-screen">
           <div>
-            <div className="bg-white rounded-xl max-w-lg w-full p-4 shadow-lg relative mx-4">
+            <div className="bg-white rounded-xl max-w-lg w-full p-4 shadow-lg relative ">
               <button
                 onClick={closeModal}
                 className="absolute top-3 right-3 text-[#333333] px-1 py-1 text-sm bg-[#F5F5F5] rounded-full hover:text-red-500 transition-all hover:rotate-90 duration-300 cursor-pointer"
@@ -258,7 +285,7 @@ const AboutMe = () => {
               <img
                 src={selectedImage.img}
                 alt="Expanded"
-                className="w-full h-auto rounded-lg mb-4"
+                className="w-full h-[auto] lg:h-[300px] 2xl:h-auto rounded-lg mb-4"
               />
               <h2 className="text-xl font-bold mb-2">
                 {selectedImage.title || "Tech Event"}
@@ -267,9 +294,20 @@ const AboutMe = () => {
                 {selectedImage.description || "No description available."}
               </p>
             </div>
-            <div className="flex justify-between mt-4">
-              <button className="">Prev</button>
-              <button>Next</button>
+            <div className="flex justify-between mt-4 p-4">
+              <button
+                className="bg-[#F5F5F5] text-[#333333] px-3 py-2 rounded-full shadow-sm hover:bg-gray-200 transition-all cursor-pointer"
+                onClick={handlePrev}
+              >
+                <FaChevronLeft />
+              </button>
+
+              <button
+                className="bg-[#F5F5F5] text-[#333333] px-3 py-2 rounded-full shadow-sm hover:bg-gray-200 transition-all cursor-pointer"
+                onClick={handleNext}
+              >
+                <FaChevronRight />
+              </button>
             </div>
           </div>
         </div>
