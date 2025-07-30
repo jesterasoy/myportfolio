@@ -37,6 +37,22 @@ const AboutMe = () => {
     };
   }, [selectedImage]);
 
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        closeModal();
+      }
+    };
+
+    if (selectedImage) {
+      window.addEventListener("keydown", handleKeyDown);
+    }
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [selectedImage, closeModal]);
+
   const [nextImage, setNextImage] = useState(null);
   const [prevImage, setPrevImage] = useState(null);
 
@@ -164,7 +180,7 @@ const AboutMe = () => {
                 Jester Nicholas C. Asoy
               </h3>
               <div className="flex flex-wrap justify-center sm:justify-start gap-2 mt-1 mb-3 text-sm text-gray-600">
-                <span>Front-End Web Developer</span>•<span>Commission</span>
+                <span>Front-End Web Developer</span>•<span>Freelancer</span>
               </div>
               <div className="flex flex-wrap justify-center md:justify-start gap-2 text-xs text-gray-600">
                 <span className="bg-white px-3 py-2 rounded-full shadow-sm border border-gray-100 w-fit h-fit">

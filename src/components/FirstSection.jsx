@@ -24,20 +24,21 @@ const FirstSection = () => {
           <div className="absolute top-0 left-0 w-full h-full -z-10 bg-gradient-to-br from-white via-blue-50 to-white [mask-image:linear-gradient(to_bottom,black,black,transparent)]"></div>
           <div className="grid grid-cols-1 sm:grid-cols-3">
             <div className="flex flex-col items-start h-100 justify-center sora text-balance col-span-2 -mt-[7.5rem] md:-mt-[5rem] lg:-mt-[3rem] 2xl:mt-[2.5rem]">
-              <h1 className="font-bold text-2xl md:text-4xl lg:text-5xl 2xl:text-8xl tracking-wide">
-                Hello, I'm{" "}
+              <h1 className="font-bold text-2xl md:text-3xl lg:text-4xl  xl:text-5xl 2xl:text-6xl tracking-wide">
+                Hello I'm{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-yellow-600 via-yellow-700">
                   Jester
-                </span>
+                </span>{" "}
+                —
               </h1>
 
-              <div className="absolute top-[120px] md:top-[150px] lg:top-[185px] 2xl:top-[290px] left-[165px] md:left-[235px] lg:left-[300px] xl:left-[280px] 2xl:left-[750px] -z-10 h-[30px] w-[90px] md:w-[120px] lg:h-[55px] xl:h-[65px] lg:w-[160px] xl:w-[200px] 2xl:w-[300px] bg-[#F4CE14] opacity-30 blur-md"></div>
-              <h1 className="font-bold text-2xl md:text-4xl lg:text-6xl 2xl:text-8xl tracking-wide flex items-center gap-3">
-                A{" "}
+              <div className="absolute top-[125px] md:top-[150px] lg:top-[190px] 2xl:top-[300px] left-[155px] md:left-[185px] lg:left-[200px] xl:left-[260px] 2xl:left-[520px] -z-10 h-[30px] w-[90px] md:w-[120px] lg:h-[55px] xl:h-[65px] lg:w-[160px] xl:w-[200px] 2xl:w-[240px] bg-[#F4CE14] opacity-30 blur-md"></div>
+              <h1 className="font-bold text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl tracking-wide flex items-center gap-3">
+                Aspiring
                 <span>
                   <Typwriter
                     options={{
-                      strings: ["Web Developer.", "IT Specialist."],
+                      strings: ["Web Developer", "IT Specialist "],
                       autoStart: true,
                       loop: true,
                     }}
