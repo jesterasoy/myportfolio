@@ -126,9 +126,13 @@ const AboutMe = () => {
           <span>Get to Know Me</span>
         </button>
 
-        <button className="bg px-4 py-2 text-sm sm:text-base tracking-wide font-semibold rounded-full cursor-pointer sm:px-6 sm:py-3 lg:px-8 lg:py-4">
+        <a
+          href="https://drive.google.com/file/d/1XIH3cZmnUL-pn1j4brgNnlBcT2b75_f3/view?usp=sharing"
+          target="_blank"
+          className="bg px-4 py-2 text-sm sm:text-base tracking-wide font-semibold rounded-full cursor-pointer sm:px-6 sm:py-3 lg:px-8 lg:py-4"
+        >
           <span>Resume</span>
-        </button>
+        </a>
       </div>
 
       <div
@@ -141,7 +145,7 @@ const AboutMe = () => {
           <div className="flex justify-between mb-6 items-center border-b border-gray-300 pb-4">
             <h2 className="text-2xl font-bold tracking-wide">About Me</h2>
             <button
-              className="text-[#333] hover:text-red-500 transition-all hover:rotate-90 duration-300"
+              className="text-[#333] hover:text-red-500 transition-all hover:rotate-90 duration-300 cursor-pointer"
               onClick={toggleBar}
             >
               <HiOutlineXMark className="w-6 h-6" />
