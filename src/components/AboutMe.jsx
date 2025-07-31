@@ -14,7 +14,19 @@ const AboutMe = () => {
   const [isSideToggleOpen, setSideToggleOpen] = useState(false);
   const sidebarRef = useRef(null);
   const toggleBar = () => {
-    setSideToggleOpen(!isSideToggleOpen);
+    const isMobile = window.innerWidth <= 768; // or your preferred breakpoint
+
+    setSideToggleOpen((prev) => {
+      const newState = !prev;
+
+      if (isMobile) {
+        document.body.style.overflow = newState ? "hidden" : "auto";
+      } else {
+        document.body.style.overflow = "auto"; 
+      }
+
+      return newState;
+    });
   };
 
   useEffect(() => {
@@ -340,7 +352,7 @@ const AboutMe = () => {
               <img
                 src={selectedImage.img}
                 alt="Expanded"
-                className="w-full h-[auto] lg:h-[300px] 2xl:h-auto rounded-lg mb-4"
+                className="w-full h-[300px] lg:h-[350px] 2xl:h-auto rounded-lg mb-4"
               />
               <h2 className="text-xl font-bold mb-2">
                 {selectedImage.title || "Tech Event"}

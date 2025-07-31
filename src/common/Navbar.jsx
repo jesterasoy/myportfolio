@@ -5,7 +5,7 @@ import {
   IoLogoFacebook,
   IoLogoGithub,
 } from "react-icons/io";
-import { SiMinutemailer } from "react-icons/si";
+import { BiLogoGmail } from "react-icons/bi";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -40,13 +40,6 @@ const Navbar = () => {
             </a>
             <a
               target="_blank"
-              href="https://www.instagram.com/colelxx/"
-              className="  transition-transform hover:scale-110 duration-200"
-            >
-              <IoLogoInstagram />
-            </a>
-            <a
-              target="_blank"
               href="https://www.linkedin.com/in/jester-nicholas-asoy-026a13318/"
               className="transition-transform  hover:scale-110 duration-200"
             >
@@ -57,7 +50,7 @@ const Navbar = () => {
               href="https://mail.google.com/mail/?view=cm&fs=1&to=asoy.jestern@gmail.com&su=Subject%20Here&body=Hello%20there!"
               className="transition-transform  hover:scale-110 duration-200"
             >
-              <SiMinutemailer />
+              <BiLogoGmail />
             </a>
           </nav>
         </header>

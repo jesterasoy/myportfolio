@@ -38,7 +38,7 @@ const FirstSection = () => {
           duration: 1,
           ease: "power3.out",
         },
-        "-=0.5" // starts before previous finishes
+        "-=0.5" 
       )
       .from(
         imageRef.current,
@@ -86,7 +86,10 @@ const FirstSection = () => {
                 </span>
               </h1>
 
-              <p className="mt-4 text-xs md:text-lg 2xl:text-lg lg:text-[15px] text-gray-600  leading-relaxed">
+              <p
+                ref={subTextRef}
+                className="mt-4 text-xs md:text-lg 2xl:text-lg lg:text-[15px] text-gray-600  leading-relaxed"
+              >
                 A passionate developer turning ideas into interactive
                 experiences — focused on{" "}
                 <span className="underline decoration-cyan-500">modern</span>,{" "}
