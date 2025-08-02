@@ -21,6 +21,9 @@ const myProjectsData = [
       'plated/plated4.png',
       'plated/plated.png'
     ],
+    Color: '#F97316',
+    viaColor: '#EA580C',
+    toColor: '#C2410C',
     Year: 2025,
     Link: 'https://example.com/portfolio'
   },
@@ -42,7 +45,9 @@ const myProjectsData = [
       'capstone/profile.jpg'
     ],
     Year: 2024,
-
+    Color: '#795548',
+    viaColor: '#6D4C41',
+    toColor: '#5D4037',
     Link: 'https://example.com/task-manager'
   },
   {
@@ -63,7 +68,10 @@ const myProjectsData = [
       'SQL Injection Prevention'
     ],
     Images: ['ias/ias.png', 'ias/ias2.png', 'ias/ias3.png'],
-    Year: 2025,
+    Color: '#EC407A',
+    viaColor: '#E91E63',
+    toColor: '#C2185B',
+
     Link: 'https://example.com/bini-schedule'
   },
   {
@@ -76,6 +84,10 @@ const myProjectsData = [
       'AK8 Travel & Tours is a travel booking web application developed by the company I interned with. My role in the project involved working on the frontend using HTML, CSS, JavaScript, and Bootstrap to build responsive pages. I also implemented API calls to fetch and display dynamic content such as tour packages and booking details.\n\nThis experience helped me strengthen my frontend development skills and gave me real-world exposure to integrating APIs and working collaboratively in a professional development environment.',
     Technologies: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'API Integration'],
     Images: ['ak8/ak8.png', 'ak8/ak82.png', 'ak8/ak83.png', 'ak8/ak84.jpg'],
+    Color: '#000000',
+    viaColor: '#1A1A1A',
+    toColor: '#333333',
+
     Year: 2025,
     Link: 'https://example.com/movie-finder'
   }

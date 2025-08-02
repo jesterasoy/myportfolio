@@ -54,20 +54,33 @@ const ProjectData = () => {
       <div className="sora">
         {/* Header Banner */}
         <div
-          className="h-[300px] 2xl:h-[500px]  flex items-center justify-center mb-5 w-full"
+          className="h-[300px] xl:h-[450px] 2xl:h-[500px] flex items-center justify-center mb-5 w-full"
           style={{
             backgroundImage: `url('/images/${project.Cover}')`,
+            backgroundRepeat:
+              window.innerWidth >= 1024 ? "no-repeat" : "repeat",
+            backgroundPosition: "top center",
+            backgroundSize: "cover",
           }}
         ></div>
 
         {/* Main Content */}
         <div className="p-10 max-w-screen-2xl mx-auto min-h-screen">
           <div className="border-b border-gray-300 pb-6 mb-6">
-            <div className="flex justify-between items-center border-b border-gray-300 pb-4 mb-4">
-              <h1 className="text-2xl md:text-5xl lg:text-6xl font-extrabold bg-gradient-to-r from-yellow-500 via-yellow-600 to-yellow-700 text-transparent bg-clip-text mb-2">
+            <div className="flex justify-between  border-b border-gray-300 pb-4 mb-4">
+              <h1
+                className="text-2xl md:text-5xl lg:text-6xl font-extrabold mb-2"
+                style={{
+                  background: `linear-gradient(to right, ${project.Color}, ${project.viaColor}, ${project.toColor})`,
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                  color: "transparent",
+                }}
+              >
                 {project.Title}
               </h1>
-              <span className="inline-block px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-600 shadow-sm">
+              <span className="inline-block h-fit px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-600 shadow-sm">
                 {project.Year}
               </span>
             </div>

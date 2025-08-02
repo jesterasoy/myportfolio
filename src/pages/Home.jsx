@@ -3,7 +3,7 @@ import React from "react";
 //COMPONENTS
 import FirstSection from "../components/FirstSection";
 import SecSection from "../components/SecSection";
-
+import ThirdSection from "../components/ThirdSection";
 const Home = () => {
   return (
     <>
@@ -11,6 +11,7 @@ const Home = () => {
         <FirstSection />
       </div>
       <SecSection />
+      <ThirdSection />
     </>
   );
 };
