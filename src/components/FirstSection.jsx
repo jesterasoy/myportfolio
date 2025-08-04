@@ -72,7 +72,7 @@ const FirstSection = () => {
               <div className="absolute top-[125px] md:top-[150px] lg:top-[190px] 2xl:top-[300px] left-[155px] md:left-[185px] lg:left-[200px] xl:left-[260px] 2xl:left-[520px] -z-10 h-[30px] w-[90px] md:w-[120px] lg:h-[55px] xl:h-[65px] lg:w-[160px] xl:w-[200px] 2xl:w-[240px] bg-[#F4CE14] opacity-30 blur-md"></div>
               <h1
                 ref={subTextRef}
-                className="font-bold text-2xl xs:text-xl sm: md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl tracking-wide flex items-center gap-3"
+                className="font-bold text-xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl tracking-wide flex items-center gap-3"
               >
                 Aspiring
                 <span>
