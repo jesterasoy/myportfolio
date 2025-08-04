@@ -59,8 +59,6 @@ const ProjectData = () => {
             backgroundImage: `url('/images/${project.Cover}')`,
             backgroundRepeat:
               window.innerWidth >= 1024 ? "no-repeat" : "repeat",
-            backgroundPosition: "top center",
-            backgroundSize: "cover",
           }}
         ></div>
 
