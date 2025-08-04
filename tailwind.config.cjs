@@ -3,7 +3,8 @@ export default {
   theme: {
     extend: {
       screens: {
-        xs: '360px'
+        xss: '320px',
+        xsPhone: '360px'
       }
     }
   },
