@@ -57,8 +57,8 @@ const ProjectData = () => {
           className="h-[300px] xl:h-[450px] 2xl:h-[500px] flex items-center justify-center mb-5 w-full"
           style={{
             backgroundImage: `url('/images/${project.Cover}')`,
-            backgroundRepeat:
-              window.innerWidth > 1024 ? "repeat" : "no-repeat",
+            backgroundRepeat: window.innerWidth > 1024 ? "repeat" : "no-repeat",
+            backgroundSize: window.innerWidth < 1024 ? "cover" : "contain",
           }}
         ></div>
 
