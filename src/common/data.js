@@ -71,6 +71,7 @@ const myProjectsData = [
     Color: '#EC407A',
     viaColor: '#E91E63',
     toColor: '#C2185B',
+    Year: 2024,
 
     Link: 'https://example.com/bini-schedule'
   },
