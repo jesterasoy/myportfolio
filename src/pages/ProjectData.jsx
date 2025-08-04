@@ -58,7 +58,7 @@ const ProjectData = () => {
           style={{
             backgroundImage: `url('/images/${project.Cover}')`,
             backgroundRepeat:
-              window.innerWidth >= 1024 ? "no-repeat" : "repeat",
+              window.innerWidth >= 1024 ? "repeat" : "no-repeat",
           }}
         ></div>
 
