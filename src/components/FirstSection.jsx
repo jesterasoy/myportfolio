@@ -63,7 +63,7 @@ const FirstSection = () => {
         <section className="-mt-10 2xl:mt-0">
           <div className="absolute top-0 left-0 w-full h-full -z-10 bg-gradient-to-br from-white via-blue-50 to-white [mask-image:linear-gradient(to_bottom,black,black,transparent)]"></div>
           <div className="grid grid-cols-1 sm:grid-cols-3">
-            <div className="flex flex-col items-start h-100 justify-center sora text-balance col-span-2 -mt-[9rem] md:-mt-[5rem] lg:-mt-[3rem] 2xl:mt-[2.5rem]">
+            <div className="flex flex-col items-start h-100 justify-center sora text-balance col-span-2 -mt-[8rem] md:-mt-[5rem] lg:-mt-[3rem] 2xl:mt-[2.5rem]">
               <h1
                 className="font-bold text-xl md:text-3xl lg:text-4xl  xl:text-5xl 2xl:text-6xl tracking-wide"
                 style={style}
