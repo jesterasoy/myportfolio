@@ -1,5 +1,5 @@
-import React from "react";
-
+import { React, useState, useEffect } from "react";
+import { HiOutlineXMark } from "react-icons/hi2";
 const ThirdSection = () => {
   const myCertificatesData = [
     { id: 1, Cover: "certificates/hackFest.jpg" },
@@ -9,6 +9,42 @@ const ThirdSection = () => {
     { id: 5, Cover: "certificates/QA.jpg" },
     { id: 6, Cover: "certificates/webDev.jpg" },
   ];
+
+  const [isSelected, setIsSelected] = useState(null);
+
+  function handleCertificateClick(certificate) {
+    setIsSelected(certificate);
+  }
+
+  useEffect(() => {
+    const handleEscapeKey = (event) => {
+      if (event.key === "Escape") {
+        setIsSelected(null);
+      }
+    };
+
+    document.addEventListener("keydown", handleEscapeKey);
+    return () => {
+      document.removeEventListener("keydown", handleEscapeKey);
+    };
+  });
+
+  useEffect(() => {
+    document.body.style.overflow = isSelected ? "hidden" : "auto";
+  }, [isSelected]);
+
+ useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (isSelected && !event.target.closest(".certificate-modal")) {
+        setIsSelected(null);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isSelected]);
 
   return (
     <>
@@ -20,7 +56,11 @@ const ThirdSection = () => {
         </div>
         <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-6 mt-10">
           {myCertificatesData.map((certificate, index) => (
-            <div key={certificate.id || index} className="flex justify-center">
+            <div
+              key={certificate.id || index}
+              onClick={() => handleCertificateClick(certificate)}
+              className="flex justify-center cursor-pointer"
+            >
               <img
                 src={`images/${certificate.Cover}`}
                 alt={`Certificate ${certificate.title || index + 1}`}
@@ -33,6 +73,26 @@ const ThirdSection = () => {
           ))}
         </div>
       </div>
+
+      {isSelected && (
+        <div className="modal fixed inset-0 backdrop-blur-sm flex items-center justify-center z-50">
+          <div className="bg-white p-5 rounded-lg shadow-lg max-w-3xl w-full">
+            <div className="flex justify-end">
+              <button
+                className="text-[#333] hover:text-red-500 mb-3 transition-all hover:rotate-90 duration-300 cursor-pointer"
+                onClick={() => setIsSelected(null)}
+              >
+                <HiOutlineXMark className="w-6 h-6" />
+              </button>
+            </div>
+            <img
+              src={`images/${isSelected.Cover}`}
+              alt="Selected Certificate"
+              className="w-full max-h-[80vh] object-contain mb-4"
+            />
+          </div>
+        </div>
+      )}
     </>
   );
 };

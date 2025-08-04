@@ -27,7 +27,7 @@ const FirstSection = () => {
     tl.from(textRef.current, {
       opacity: 0,
       y: 40,
-      duration: 1,
+      duration: 1.2,
       ease: "power3.out",
     })
       .from(
@@ -35,10 +35,10 @@ const FirstSection = () => {
         {
           opacity: 0,
           y: 20,
-          duration: 1,
+          duration: 1.2,
           ease: "power3.out",
         },
-        "-=0.5" 
+        "-=0.5"
       )
       .from(
         imageRef.current,
@@ -78,7 +78,7 @@ const FirstSection = () => {
                 <span>
                   <Typwriter
                     options={{
-                      strings: ["Web Developer", "IT Specialist "],
+                      strings: ["Web Developer.", "IT Specialist."],
                       autoStart: true,
                       loop: true,
                     }}
